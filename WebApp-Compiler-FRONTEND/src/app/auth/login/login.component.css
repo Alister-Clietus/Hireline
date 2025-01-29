@@ -180,7 +180,7 @@ form .user-details .input-box{
   .button-signup {
     position: absolute;
     bottom: 35%;
-    right: 25%;
+    /* right: 25%; */
     left: 25%;
     padding: 8px 16px;
     font-size: 14px;

@@ -79,35 +79,43 @@ public class RegistrationServiceImp implements RegistrationService
 	
 	PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	
+//	****Questionair Registration Service Implementation****
 	public ServiceResponse addUserDetails(RegistrationDTO regdto) {
-		try {
-			Date currentDate = new Date();
-			RegistrationEntity entity = new RegistrationEntity();
-			String encodedPassword = passwordEncoder.encode(regdto.getPassword());
-			entity.setPassword(encodedPassword);
-			entity.setUserName(regdto.getUserName());
-			entity.setFullname(regdto.getFullname());
-			entity.setEmail(regdto.getEmail());
-			entity.setPhoneNumber(regdto.getPhoneNumber());
-			entity.setEmpid(regdto.getEmpid());
-			entity.setIsMCQAttended(false);
-			entity.setIsPRGAttended(false);
-			entity.setCdate(currentDate);
-			entity.setGender(regdto.getGender());
-			entity.setUserType("QUESTIONNAIRE");
-			entity.setIsMCQAttended(false);
-			entity.setIsPRGAttended(false);
-			entity.setStatus("PROCESSD");
-			entity.setTotalMarks("0");
-			regrepo.save(entity);
-			return new ServiceResponse(Constants.MESSAGE_STATUS.success,Constants.USERLOG.USER_ADDED, null);
+	    try {
+	        Date currentDate = new Date();
+	        RegistrationEntity entity = new RegistrationEntity();
+	        String encodedPassword = passwordEncoder.encode(regdto.getPassword());
+	        entity.setPassword(encodedPassword);
+	        entity.setUserName(regdto.getUserName());
+	        entity.setFullname(regdto.getFullname());
+	        entity.setEmail(regdto.getEmail());
+	        entity.setPhoneNumber(regdto.getPhoneNumber());
+	        entity.setEmpid(regdto.getEmpid());
+	        entity.setIsMCQAttended(false);
+	        entity.setIsPRGAttended(false);
+	        entity.setCdate(currentDate);
+	        entity.setGender(regdto.getGender());
 
-		} catch (Exception e) {
-			logger.error("Error : " + e.getMessage(), e);
-			return new ServiceResponse("fail", "User Inserted UnSuceessfully", null);
+	        // Check the number of existing users
+	        long userCount = regrepo.count();
+	        if (userCount < 3) {
+	            entity.setUserType("ADMIN");
+	        } else {
+	            entity.setUserType("QUESTIONNAIRE");
+	        }
 
-		}
+	        entity.setStatus("PROCESSD");
+	        entity.setTotalMarks("0");
+	        
+	        regrepo.save(entity);
+	        return new ServiceResponse(Constants.MESSAGE_STATUS.success, Constants.USERLOG.USER_ADDED, null);
+	        
+	    } catch (Exception e) {
+	        logger.error("Error : " + e.getMessage(), e);
+	        return new ServiceResponse("fail", "User Inserted UnSuccessfully", null);
+	    }
 	}
+
 	
 	public ServiceResponse addStudentDetails(RegistrationDTO regdto)
 	{

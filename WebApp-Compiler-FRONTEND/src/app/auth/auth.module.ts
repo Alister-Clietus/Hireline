@@ -7,6 +7,8 @@ import { TemplandingComponent } from './templanding/templanding.component';
 import { FormsModule } from '@angular/forms';
 
 
+
+
 @NgModule({
   declarations: [LoginComponent, TemplandingComponent],
   imports: [

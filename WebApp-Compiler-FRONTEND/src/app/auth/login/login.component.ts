@@ -17,6 +17,10 @@ import Swal from 'sweetalert2'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+signupportal() 
+{
+  this.router.navigate(['./auth/signup/student-portal'],{skipLocationChange:true});
+}
   logindto:Login = new Login();
   constructor(private router: Router,private httpservice: HttpService,private tokenservice: TokenserviceService,private timer:TimerService,private visitedroutes:RouteVisitService,private fullscreenservice:FullScreenService) { }
 
