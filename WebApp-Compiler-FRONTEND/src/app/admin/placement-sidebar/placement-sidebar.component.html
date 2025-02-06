@@ -9,11 +9,6 @@
     </div>
     <ul class="nav-list">
       <li>
-          <i class='bx bx-search'></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
-      </li>
-      <li>
         <a (click)="goToDashboard()">
           <i class='bx bx-grid-alt'></i>
           <span class="links_name">Dashboard</span>
@@ -35,26 +30,26 @@
        <span class="tooltip">Student Details</span>
      </li>
      <li>
-       <a (click)="viewAnalytics()">
+       <a (click)="companyDetails()">
          <i class='bx bx-pie-chart-alt-2'></i>
-         <span class="links_name">Add Questionnair</span>
+         <span class="links_name">Company Details</span>
        </a>
-       <span class="tooltip">Add Questionnair</span>
+       <span class="tooltip">Company Details</span>
      </li>
      <li>
-       <a  (click)="downloadFile()">
+       <a  (click)="downloadandUploadFile()">
          <i class='bx bx-download'></i>
-         <span class="links_name">Download</span>
-       </a>
-       <span class="tooltip">Download</span>
-     </li>
-     <li>
-       <a (click)="uploadFile()">
-         <i class='bx bx-upload'></i>
          <span class="links_name">Upload</span>
        </a>
        <span class="tooltip">Upload</span>
      </li>
+     <li>
+      <a (click)="download()">
+        <i class='bx bx-pie-chart-alt-2'></i>
+        <span class="links_name">Download</span>
+      </a>
+      <span class="tooltip">Download</span>
+    </li>
      <li>
         <a (click)="listChamptions()">
           <i class='bx bx-run'></i>         

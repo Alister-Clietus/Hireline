@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LogoutService } from 'src/app/service/logout.service';
 
 @Component({
   selector: 'app-placement-sidebar',
@@ -6,18 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./placement-sidebar.component.css']
 })
 export class PlacementSidebarComponent implements OnInit {
-listChamptions() {
-throw new Error('Method not implemented.');
-}
-studentDetails() {
-throw new Error('Method not implemented.');
-}
-jobAlerts() {
-throw new Error('Method not implemented.');
-}
+
+
   isSidebarOpen: boolean = false;
 
-  constructor() { }
+  constructor(private router: Router,private logoutt:LogoutService) { }
 
   ngOnInit(): void 
   {
@@ -29,26 +24,42 @@ throw new Error('Method not implemented.');
     this.isSidebarOpen = !this.isSidebarOpen;
   }
   
-  goToDashboard() {
+  goToDashboard() 
+  {
+    this.router.navigate(['./admin/admin-dashboard'],{skipLocationChange:true});
   }
-  listUsers() {
+  openSettings() 
+  {
+    this.router.navigate(['./admin/settings'],{skipLocationChange:true});
   }
-  addQuestion() {
+  logout() 
+  {
+    this.logoutt.logoutt();
   }
-  viewAnalytics() {
+// This is the function for Uploading file
+  downloadandUploadFile() 
+  {
+    this.router.navigate(['./admin/dwn-upld'],{skipLocationChange:true});
   }
-  viewCodeBase() {
+  companyDetails() 
+  {
+    this.router.navigate(['./admin/company-details'],{skipLocationChange:true});
   }
-  downloadFile() {
+  listChamptions() 
+  {
+    this.router.navigate(['./admin/champion'],{skipLocationChange:true});
   }
-  uploadFile() {
+  studentDetails() 
+  {
+    this.router.navigate(['./admin/student-details'],{skipLocationChange:true});
   }
-  listQuestions() {
+  jobAlerts() 
+  {
+    this.router.navigate(['./admin/job-alert'],{skipLocationChange:true});
   }
-  openSettings() {
-    // Implementation to open settings
-  }
-  logout() {
-  }
+  download() 
+  {
+    this.router.navigate(['./admin/download'],{skipLocationChange:true});
+    }
 
 }

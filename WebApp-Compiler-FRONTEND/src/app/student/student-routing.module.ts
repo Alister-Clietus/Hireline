@@ -12,8 +12,15 @@ import { SubmitpageComponent } from './submitpage/submitpage.component';
 import { SubmitGuard } from '../service/gurad/submit.guard';
 import { StudentPortalComponent } from './student-portal/student-portal.component';
 import { ChampionComponent } from './student-portal/champion/champion.component';
-import { UpdateComponent } from './student-portal/update/update.component';
 import { JobalertsComponent } from './student-portal/jobalerts/jobalerts.component';
+import { ResumeCheckerComponent } from './student-portal/resume-checker/resume-checker.component';
+import { ProfileDetailsComponent } from './student-portal/profile-details/profile-details.component';
+import { StudentDashboardComponent } from './student-portal/student-dashboard/student-dashboard.component';
+import { StudentSideBarComponent } from './student-side-bar/student-side-bar.component';
+import { UploadComponent } from './student-portal/upload/upload.component';
+import { CompanyDetailsComponent } from './student-portal/company-details/company-details.component';
+import { DownloadComponent } from './student-portal/download/download.component';
+import { SettingsComponent } from './student-portal/settings/settings.component';
 
 
 
@@ -24,11 +31,18 @@ const routes: Routes = [
 {path:"programming/:selectedQuestionId/:selectedQuestion/:selectedQuestionHeading",component:ProgrammingComponent,canActivate: [SubmitGuard]},
 {path:"thankyou",component:ThankyouComponent},
 {path:"submitpage",component:SubmitpageComponent},
-{path:"student-portal",component:StudentPortalComponent},
-{path:"champion",component:ChampionComponent},
-{path:"update",component:UpdateComponent},
-{path:"jobalerts",component:JobalertsComponent}
 
+{path:"student-sidebar",component:StudentSideBarComponent},
+{path:"student-portal",component:StudentPortalComponent},
+{path:"student-dashboard",component:StudentDashboardComponent},
+{path:"profile-details",component:ProfileDetailsComponent},
+{path:"resume-checker",component:ResumeCheckerComponent},
+{path:"settings",component:SettingsComponent},
+{path:"champion",component:ChampionComponent},
+{path:"jobalerts",component:JobalertsComponent},
+{path:"download",component:DownloadComponent},
+{path:"upload",component:UploadComponent},
+{path:"companey-details",component:CompanyDetailsComponent}
 
 
 ];

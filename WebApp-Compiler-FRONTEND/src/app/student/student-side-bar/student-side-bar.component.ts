@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LogoutService } from 'src/app/service/logout.service';
 
 @Component({
   selector: 'app-student-side-bar',
@@ -6,18 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-side-bar.component.css']
 })
 export class StudentSideBarComponent implements OnInit {
+companyDetails() 
+{
+  this.router.navigate(['./student/companey-details'],{skipLocationChange:true});
+}
+resumeChecker() 
+{
+  this.router.navigate(['./student/resume-checker'],{skipLocationChange:true});
+}
   listChamptions() {
-    throw new Error('Method not implemented.');
+    this.router.navigate(['./student/champion'],{skipLocationChange:true});
     }
-    studentDetails() {
-    throw new Error('Method not implemented.');
+    studentDetails() 
+    {
+      this.router.navigate(['./student/profile-details'],{skipLocationChange:true});
     }
-    jobAlerts() {
-    throw new Error('Method not implemented.');
+    jobAlerts() 
+    {
+      this.router.navigate(['./student/jobalerts'],{skipLocationChange:true});
     }
       isSidebarOpen: boolean = false;
     
-      constructor() { }
+      constructor(private router: Router,private logoutt:LogoutService) { }
     
       ngOnInit(): void 
       {
@@ -29,24 +41,22 @@ export class StudentSideBarComponent implements OnInit {
         this.isSidebarOpen = !this.isSidebarOpen;
       }
       
-      goToDashboard() {
+      goToDashboard() 
+      {
+        this.router.navigate(['./student/student-dashboard'],{skipLocationChange:true});
       }
-      listUsers() {
+
+      downloadFile() 
+      {
+        this.router.navigate(['./student/download'],{skipLocationChange:true});
       }
-      addQuestion() {
+      uploadFile() 
+      {
+        this.router.navigate(['./student/upload'],{skipLocationChange:true});
       }
-      viewAnalytics() {
-      }
-      viewCodeBase() {
-      }
-      downloadFile() {
-      }
-      uploadFile() {
-      }
-      listQuestions() {
-      }
-      openSettings() {
-        // Implementation to open settings
+      openSettings() 
+      {
+        this.router.navigate(['./student/settings'],{skipLocationChange:true});
       }
       logout() {
       }

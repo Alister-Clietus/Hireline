@@ -14,12 +14,18 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
 import { StudentPortalComponent } from './student-portal/student-portal.component';
 import { StudentSideBarComponent } from './student-side-bar/student-side-bar.component';
 import { ChampionComponent } from './student-portal/champion/champion.component';
-import { UpdateComponent } from './student-portal/update/update.component';
 import { JobalertsComponent } from './student-portal/jobalerts/jobalerts.component';
+import { StudentDashboardComponent } from './student-portal/student-dashboard/student-dashboard.component';
+import { ProfileDetailsComponent } from './student-portal/profile-details/profile-details.component';
+import { SettingsComponent } from './student-portal/settings/settings.component';
+import { ResumeCheckerComponent } from './student-portal/resume-checker/resume-checker.component';
+import { CompanyDetailsComponent } from './student-portal/company-details/company-details.component';
+import { DownloadComponent } from './student-portal/download/download.component';
+import { UploadComponent } from './student-portal/upload/upload.component';
 
 
 @NgModule({
-  declarations: [ProgrammingComponent, McqComponent, LandingComponent, ProgrammingLandingComponent, TimerComponent, HeaderComponent, SubmitpageComponent, ThankyouComponent, StudentPortalComponent, StudentSideBarComponent, ChampionComponent, UpdateComponent, JobalertsComponent],
+  declarations: [ProgrammingComponent, McqComponent, LandingComponent, ProgrammingLandingComponent, TimerComponent, HeaderComponent, SubmitpageComponent, ThankyouComponent, StudentPortalComponent, StudentSideBarComponent, ChampionComponent, JobalertsComponent, StudentDashboardComponent, ProfileDetailsComponent, SettingsComponent, ResumeCheckerComponent, CompanyDetailsComponent, DownloadComponent, UploadComponent],
   imports: [
     CommonModule,
     StudentRoutingModule,

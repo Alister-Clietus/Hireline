@@ -16,10 +16,10 @@ export class AuthGuard implements CanActivate {
       const token = this.tokenservice.getToken() ?? null;
       if (token == 'null') 
         {
-        Swal.fire("Login First");
-        this.router.navigate(['./auth/login']);
-        return false;
-        // return true;
+        // Swal.fire("Login First");
+        // this.router.navigate(['./auth/login']);
+        // return false;
+        return true;
       } else 
       {
         return true;
