@@ -7,7 +7,9 @@ import Swal from 'sweetalert2';
   templateUrl: './placement-admin.component.html',
   styleUrls: ['./placement-admin.component.css']
 })
-export class PlacementAdminComponent implements OnInit {
+export class PlacementAdminComponent implements OnInit 
+{
+  
 toggleJobsunverified() {
   this.showJobs2 = !this.showJobs2;}
 
