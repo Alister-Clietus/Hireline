@@ -88,9 +88,9 @@ signupportal()
           this.timer.settime(item.timer);
           this.tokenservice.setIsMcq(item.ismcq);
           this.tokenservice.setSubmit(item.isSubmitted)
-          console.log(this.tokenservice.getIsMcq())
           this.tokenservice.setUsername(item.username);
           this.tokenservice.setToken(item.token);
+          
           Swal.fire({
             toast: true,
             position: "top-end",
@@ -102,6 +102,26 @@ signupportal()
           this.router.navigate(['./student/landing'],{skipLocationChange:true});
         }
  
+      }
+      else if((item.role=="STUDENTPORTAL"))
+      {
+        this.fullscreenservice.fullScreenMethod();
+        this.timer.settime(item.timer);
+        this.tokenservice.setIsMcq(item.ismcq);
+        this.tokenservice.setSubmit(item.isSubmitted)
+        this.tokenservice.setUsername(item.username);
+        this.tokenservice.setToken(item.token);
+
+        Swal.fire({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 1000,
+          icon: "success",
+          title: "STUDENT PORTAL LOGGED IN",
+        })
+        this.router.navigate(['./student/student-portal'],{skipLocationChange:true});
+
       }
     },
     error=>

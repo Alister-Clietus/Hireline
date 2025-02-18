@@ -182,7 +182,6 @@ export class LandingComponent implements OnInit {
           title: "Insertion Successfully",
         })
       }
-      this.adminsettings.categories=null;
       this.adminsettings.languages=null;
       this.adminsettings.timer=null;
     },
@@ -244,8 +243,120 @@ export class LandingComponent implements OnInit {
 
   }
 
-  getdatascategoryProgram()
-  {
+deleteprogramminglanguage() {
+    // Step 1: Get the last value from programmingLanguagelist.Programminglanguege
+    const lastLanguage = this.programmingLanguagelist.Programminglanguege[this.programmingLanguagelist.Programminglanguege.length - 1];
+    console.log(lastLanguage)
+
+    // Step 2: Assign the last value to adminsettings.languages
+    this.adminsettings.languages = lastLanguage ? lastLanguage.language : null;
+    console.log(this.adminsettings.languages)
+
+
+    // Step 3: Send the updated adminsettings object to the backend
+    this.http.postdata("http://localhost:8085/register/delete/settings", this.adminsettings).subscribe(
+        (item: any) => {
+            if (item.code == "SUCCESS") {
+                // Refresh the list after deletion
+                this.getdatascategoryProgram();
+
+                // Show success message
+                Swal.fire({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 1000,
+                    icon: "success",
+                    title: "Success",
+                });
+            } else {
+                // Show warning message
+                Swal.fire({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 1000,
+                    icon: "warning",
+                    title: "Warning",
+                });
+            }
+
+            // Reset adminsettings properties
+            this.adminsettings.categories = null;
+            this.adminsettings.languages = null;
+            this.adminsettings.timer = null;
+        },
+        (error) => {
+            // Show error message
+            Swal.fire({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 1000,
+                icon: "error",
+                title: "Error",
+            });
+        }
+    );
+}
+deletecategory() {
+  // Step 1: Get the last value from programmingLanguagelist.Programminglanguege
+  const lastCategory = this.programmingLanguagelist.Category[this.programmingLanguagelist.Category.length - 1];
+  console.log(lastCategory)
+
+
+  // Step 2: Assign the last value to adminsettings.languages
+  this.adminsettings.categories = lastCategory ? lastCategory.category : null;
+  console.log(this.adminsettings.categories)
+
+
+  // Step 3: Send the updated adminsettings object to the backend
+  this.http.postdata("http://localhost:8085/register/delete/settings", this.adminsettings).subscribe(
+      (item: any) => {
+          if (item.code == "SUCCESS") {
+              // Refresh the list after deletion
+              this.getdatascategoryProgram();
+
+              // Show success message
+              Swal.fire({
+                  toast: true,
+                  position: "top-end",
+                  showConfirmButton: false,
+                  timer: 1000,
+                  icon: "success",
+                  title: "Success",
+              });
+          } else {
+              // Show warning message
+              Swal.fire({
+                  toast: true,
+                  position: "top-end",
+                  showConfirmButton: false,
+                  timer: 1000,
+                  icon: "warning",
+                  title: "Warning",
+              });
+          }
+
+          // Reset adminsettings properties
+          // this.adminsettings.categories = null;
+          this.adminsettings.languages = null;
+          this.adminsettings.timer = null;
+      },
+      (error) => {
+          // Show error message
+          Swal.fire({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 1000,
+              icon: "error",
+              title: "Error",
+          });
+      }
+  );
+}
+getdatascategoryProgram(){
     this.http.getdata("http://localhost:8085/register/getsettings").subscribe((item: any)=>
     {
       this.programmingLanguagelist=item
@@ -279,5 +390,6 @@ export class LandingComponent implements OnInit {
       })     
     })
 
-  }
+}
+
 }

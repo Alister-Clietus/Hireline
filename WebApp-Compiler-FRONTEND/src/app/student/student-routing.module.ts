@@ -35,7 +35,7 @@ const routes: Routes = [
 {path:"student-sidebar",component:StudentSideBarComponent},
 {path:"student-portal",component:StudentPortalComponent},
 {path:"student-dashboard",component:StudentDashboardComponent},
-{path:"profile-details",component:ProfileDetailsComponent},
+{path:"profile-details",component:StudentPortalComponent},
 {path:"resume-checker",component:ResumeCheckerComponent},
 {path:"settings",component:SettingsComponent},
 {path:"champion",component:ChampionComponent},

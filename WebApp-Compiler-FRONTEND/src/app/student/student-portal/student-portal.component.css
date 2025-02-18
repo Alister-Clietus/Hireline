@@ -143,3 +143,7 @@
     margin-top: 5px;
   }
   
+  .roww
+  {
+    display: flex;
+  }

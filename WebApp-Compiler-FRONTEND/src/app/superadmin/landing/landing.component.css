@@ -1,15 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+
 .container
 {
     margin-top:5%;
-    margin-left: 16%;
+    margin-left: 10%;
+    width:1250px;
 }
 
 .containerr
 {
     height: 100px;
     margin-left: 14%;
+
+}
+
+.roww
+{
+  display: flex;
+  justify-content: space-between;
 }
 .order-card {
     color: #fff;

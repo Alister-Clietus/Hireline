@@ -14,11 +14,11 @@
          <span class="tooltip">Search</span>
       </li>
       <li>
-        <a (click)="goToDashboard()">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Dashboard</span>
+        <a (click)="studentDetails()">
+         <i class='bx bxs-user-detail'></i>
+          <span class="links_name">My Profile</span>
         </a>
-         <span class="tooltip">Dashboard</span>
+        <span class="tooltip">My Profile</span>
       </li>
       <li>
        <a (click)="jobAlerts()">
@@ -26,13 +26,6 @@
          <span class="links_name">Job Alerts</span>
        </a>
        <span class="tooltip">Job Alerts</span>
-     </li>
-     <li>
-       <a (click)="studentDetails()">
-        <i class='bx bxs-user-detail'></i>
-         <span class="links_name">My Profile</span>
-       </a>
-       <span class="tooltip">My Profile</span>
      </li>
      <li>
        <a (click)="resumeChecker()">
@@ -49,18 +42,11 @@
       <span class="tooltip">Company Details</span>
     </li>
      <li>
-       <a  (click)="downloadFile()">
-         <i class='bx bx-download'></i>
-         <span class="links_name">Download</span>
+       <a  (click)="takeTestFromStudentPortal()">
+         <i class='bx bx-desktop'></i>
+         <span class="links_name">Take Test</span>
        </a>
-       <span class="tooltip">Download</span>
-     </li>
-     <li>
-       <a (click)="uploadFile()">
-         <i class='bx bx-upload'></i>
-         <span class="links_name">Upload</span>
-       </a>
-       <span class="tooltip">Upload</span>
+       <span class="tooltip">Take Test</span>
      </li>
      <li>
         <a (click)="listChamptions()">
